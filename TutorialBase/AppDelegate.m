@@ -16,6 +16,32 @@
 {
     [Parse setApplicationId:@"3IPpRgJ60KQaYDbunpwms41ax51ybH8fwJfkTAvi"
                   clientKey:@"nltBHZUBsSyDGs694ELIjKI55Mml4AnIpiVVtKUy"];
+    
+    PFObject *player = [PFObject objectWithClassName:@"Player"];
+    [player setObject:@"SaneMax" forKey:@"Name"];
+    [player setObject:[NSNumber numberWithInt:282] forKey:@"Score"];
+    [player saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            NSLog(@"This bugger saved well (%@).", [player objectId]);
+        } else {
+            NSString *errorString = [[error userInfo] objectForKey:@"error"];
+            NSLog(@"Error: %@", errorString);
+        }
+        
+    }];
+   
+    PFQuery *query = [PFQuery queryWithClassName:@"Player"];
+    [query whereKey:@"Name" equalTo:@"SaneMax"];
+    [query whereKey:@"Score" greaterThan:[NSNumber numberWithInt:200]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            NSLog(@"Successfully retrieved: (%d) %@", [objects count], objects);
+        } else {
+            NSString *errorString = [[error userInfo] objectForKey:@"error"];
+            NSLog(@"Error: %@", errorString);
+        }
+    }];
+    
     return YES;
 }
 							
