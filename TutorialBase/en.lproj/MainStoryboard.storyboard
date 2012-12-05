@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -86,7 +86,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="NyS-f4-DyD" id="JMQ-Mq-02r"/>
                         <outlet property="userTextField" destination="epa-6q-tmp" id="yug-55-qbk"/>
-                        <segue destination="eVf-OV-0bl" kind="push" identifier="LoginSuccesful" id="hdL-QN-8wK"/>
+                        <segue destination="eVf-OV-0bl" kind="push" identifier="LoginSuccessful" id="hdL-QN-8wK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ynI-WD-Mw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -224,7 +224,7 @@
                     <connections>
                         <outlet property="passwordRegisterTextField" destination="wN2-Hr-MrQ" id="Kiu-9x-8Kp"/>
                         <outlet property="userRegisterTextField" destination="rpY-6X-SdQ" id="ZmA-8Z-Zng"/>
-                        <segue destination="eVf-OV-0bl" kind="push" identifier="SignupSuccesful" id="IAy-A0-oDm"/>
+                        <segue destination="eVf-OV-0bl" kind="push" identifier="SignupSuccessful" id="IAy-A0-oDm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vNm-CM-vmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -238,6 +238,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hdL-QN-8wK"/>
+        <segue reference="IAy-A0-oDm"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE26C7A4166FD12E0050A097 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE26C7A3166FD12E0050A097 /* Parse.framework */; };
 		AEF65BCD166E4CB3005C2CEF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF65BCC166E4CB3005C2CEF /* Parse.framework */; };
 		AEF65BD4166E4E93005C2CEF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF65BD3166E4E93005C2CEF /* AudioToolbox.framework */; };
 		AEF65BD6166E4E9A005C2CEF /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF65BD5166E4E9A005C2CEF /* Accounts.framework */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE26C7A3166FD12E0050A097 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		AEF65BCC166E4CB3005C2CEF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		AEF65BD3166E4E93005C2CEF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		AEF65BD5166E4E9A005C2CEF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -92,6 +94,7 @@
 				B8811D9315B049AE00F6F58A /* UIKit.framework in Frameworks */,
 				B8811D9515B049AE00F6F58A /* Foundation.framework in Frameworks */,
 				AEF65BCD166E4CB3005C2CEF /* Parse.framework in Frameworks */,
+				AE26C7A4166FD12E0050A097 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +121,7 @@
 		B8811D9115B049AE00F6F58A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE26C7A3166FD12E0050A097 /* Parse.framework */,
 				AEF65BEB166E4EFB005C2CEF /* SystemConfiguration.framework */,
 				AEF65BE9166E4EF5005C2CEF /* StoreKit.framework */,
 				AEF65BE7166E4EEB005C2CEF /* Social.framework */,

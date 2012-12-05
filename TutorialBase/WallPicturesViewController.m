@@ -99,7 +99,23 @@
 //Get the list of images
 -(void)getWallImages
 {
-    //TODO: Get the wall objects from the server
+    PFQuery *query = [PFQuery queryWithClassName:@"WallImageObject"];
+    [query orderByDescending:@"createdAt"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            self.wallObjectsArray = nil;
+            self.wallObjectsArray = [[NSArray alloc] initWithArray:objects];
+            [self loadWallViews];
+        } else {
+            NSString *errorString = [[error userInfo] objectForKey:@"error"];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:errorString
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }];
 }
 
 

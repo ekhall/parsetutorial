@@ -54,9 +54,27 @@
 ////Sign Up Button pressed
 -(IBAction)signUpUserPressed:(id)sender
 {
-    //TODO
-    //If signup sucessful:
-    [self performSegueWithIdentifier:@"SignupSuccesful" sender:self];
+    PFUser *user = [PFUser user];
+    user.username = self.userRegisterTextField.text;
+    user.password = self.passwordRegisterTextField.text;
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            // Registration successful - go to the wall.
+            [self performSegueWithIdentifier:@"SignupSuccessful" sender:self];
+        }
+        else {
+            // Somthing bad has occured.
+            NSString *errorString = [[error userInfo] objectForKey:@"error"];
+            UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                     message:errorString
+                                                                    delegate:nil
+                                                           cancelButtonTitle:@"Ok"
+                                                           otherButtonTitles:nil, nil];
+            [errorAlertView show];
+        }
+    }];
+    
+    [self performSegueWithIdentifier:@"SignupSuccessful" sender:self];
 }
 
 @end

@@ -54,8 +54,24 @@
 //Login button pressed
 -(IBAction)logInPressed:(id)sender
 {
+    [PFUser logInWithUsernameInBackground:self.userTextField.text
+                                 password:self.passwordTextField.text
+                                    block:^(PFUser *user, NSError *error) {
+                                        if (user) {
+                                            [self performSegueWithIdentifier:@"LoginSuccessful"
+                                                                      sender:self];
+                                        } else {
+                                            NSString *errorString = [[error userInfo] objectForKey:@"error"];
+                                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                                            message:errorString
+                                                                                           delegate:nil
+                                                                                  cancelButtonTitle:@"Ok"
+                                                                                  otherButtonTitles:nil, nil];
+                                            [alert show];
+                                        }
+                                    }];
     
-    [self performSegueWithIdentifier:@"LoginSuccesful" sender:self];
+    [self performSegueWithIdentifier:@"LoginSuccessful" sender:self];
 
 }
 
