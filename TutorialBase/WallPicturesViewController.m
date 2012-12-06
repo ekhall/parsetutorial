@@ -125,9 +125,18 @@
         // Add the comment
         UILabel *commentLabel = [[UILabel alloc] initWithFrame:
                                  CGRectMake(0, 240, wallImageView.frame.size.width, 15)];
+        commentLabel.text = [wallObject objectForKey:@"comment"];
+        commentLabel.font = [UIFont fontWithName:@"ArialMT" size:13];
+        commentLabel.textColor = [UIColor whiteColor];
+        commentLabel.backgroundColor = [UIColor clearColor];
+        [wallImageView addSubview:commentLabel];
         
+        [self.wallScroll addSubview:wallImageView];
+        originY = originY + wallImageView.frame.size.width + 20;
     }
     
+    // Set the bounds of the scroll
+    self.wallScroll.contentSize = CGSizeMake(self.wallScroll.frame.size.width, originY);
 }
 
 
